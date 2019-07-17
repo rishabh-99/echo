@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Folder Structure</title>
+</head>
+
+<style>
+    .container {
+        padding-top: 50px;
+    }
+</style>    
+
+<body>
+    <div class="container">
+        <h4 id="directory"></h4>
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Enter Foldername:</label>
+                    <input name="rootFolder" class="form-control" id="f1" type="text">
+                </div>
+                <div class="form-group">
+                    <label>Enter Filename:</label><br>
+                    <input name="files" id="fileId" class="form-control" type="text"><br>
+                </div>
+            <button class="btn btn-primary" value="Toggle" id="toggle" onclick="Toggle()">Add field</button>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+function Toggle(){
+    var root = document.getElementById("f1").value;
+    var rootfile = document.getElementById("fileId").value;
+    
+    if(root != "" && rootfile != ""){
+       window.alert("Please enter one field at a time");
+    }
+    else if(root == "" && rootfile == ""){
+       window.alert("Please enter the folder or the file to be stored");
+    }
+    else if(root == ""){
+        var RootFolder = document.createElement("label");
+        RootFolder.id = "addBtn";
+        RootFolder.innerHTML = rootfile;
+        document.body.appendChild(RootFolder);
+    }else{
+        document.getElementById("f1").value = "";
+        var RootFolder = document.createElement("label");
+        // RootFolder.innerHTML = root;
+        // document.body.appendChild(RootFolder);
+        var button = document.createElement("button");
+        // button.innerHTML = "add";
+        // document.body.appendChild(button);
+        button.value = root;
+        button.onclick = Refresh;
+    }
+}
+function Refresh(event){
+    var presentFolder = document.getElementById("directory");
+    presentFolder.innerText = "Enter Folders/Files into" + " " + this.value + " " + "Directory";
+}
+</script>
+</body>
+</html>
