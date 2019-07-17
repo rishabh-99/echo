@@ -1,0 +1,43 @@
+import { HeartRateSensor } from "heart-rate";
+import { display } from "display";
+
+if (HeartRateSensor) {
+  const hrm = new HeartRateSensor();
+  hrm.addEventListener("reading", () => {
+    console.log(`Current heart rate: ${hrm.heartRate}`);
+  });
+  display.addEventListener("change", () => {
+   });
+  hrm.start();
+}
+import { Gyroscope } from "gyroscope";
+
+if (Gyroscope) {
+   console.log("This device has a Gyroscope!");
+   const gyroscope = new Gyroscope({ frequency: 1 });
+   gyroscope.addEventListener("reading", () => {
+     console.log(
+      `Gyroscope Reading: \
+        timestamp=${gyroscope.timestamp}, \
+        [${gyroscope.x}, \
+        ${gyroscope.y}, \
+        ${gyroscope.z}]`
+     );
+   });
+   gyroscope.start();
+} else {
+   console.log("This device does NOT have a Gyroscope!");
+}
+import { Accelerometer } from "accelerometer";
+
+if (Accelerometer) {
+   console.log("This device has an Accelerometer!");
+   const accelerometer = new Accelerometer({ frequency: 1 });
+   accelerometer.addEventListener("reading", () => {
+     console.log(`accelerometer ${accelerometer.x},${accelerometer.y},${accelerometer.z}`);
+   });
+   accelerometer.start();
+} else {
+   console.log("This device does NOT have an Accelerometer!");
+}
+
