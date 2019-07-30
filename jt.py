@@ -21,12 +21,28 @@ z1 = acm_data["gz"]
 hr = acm_data["hr"]
 ts = acm_data["timestamp"]
 time=[]
+twms=[]
+ftime=[]
+f=open("user1.csv","r")
+j=0
+for line in f:
+    if j!=0:
+        words=line.split(",")
+        k=0
+        for i in words:
+            if k==7:
+                time.append(i)
+            k=k+1
+    j=j+1
+for i in time:
+    twms=i.split()
+    ftime.append(twms[0])
+  
 j=0
 for i in ts:
     if j!=0:
         time.append(i)
     j=j+1
-print(time)
 j=0
 lx=[]
 gx=[]
@@ -84,7 +100,8 @@ temp=[]
 while i<j:
     l.append(i)
     i=i+1.00
-plt.plot(l,point)
-plt.plot(l,point1)
-plt.plot(l,lh)
+plt.plot(ftime,point)
+plt.plot(ftime,point1)
+plt.plot(ftime,lh)
+plt.xticks(rotation=45)
 plt.show()
