@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>CMAI Form</title>
+</head>
+<body>
+    <div class="container">
+        <label>Enter the patient's name</label>
+        <input type="text" id="name">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Phisical Activities</th>
+                    <th>Never</th>
+                    <th>Less than once a week</th>
+                    <th>Once a week</th>
+                    <th>Several times a week</th>
+                    <th>Once or twice a day</th>
+                    <th>Several times a day</th>
+                    <th>Several times an hour</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Hitting</th>
+                    <th><center><input type="radio" name="hitting" value="hittingNever"></center></th>
+                    <th><center><input type="radio" name="hitting" value="hittingLTW"></center></th>
+                    <th><center><input type="radio" name="hitting" value="hittingOAW"></center></th>
+                    <th><center><input type="radio" name="hitting" value="hittingSTW"></center></th>
+                    <th><center><input type="radio" name="hitting" value="hittingOAD"></center></th>
+                    <th><center><input type="radio" name="hitting" value="hittingSTD"></center></th>
+                    <th><center><input type="radio" name="hitting" value="hittingSTH"></center></th>
+                </tr>
+                
+                <tr>
+                    <th>Grabing onto people</th>
+                    <th><center><input type="radio" name="grabing" value="grabingNever"></center></th>
+                    <th><center><input type="radio" name="grabing" value="grabingLTW"></center></th>
+                    <th><center><input type="radio" name="grabing" value="grabingOAW"></center></th>
+                    <th><center><input type="radio" name="grabing" value="grabingSTW"></center></th>
+                    <th><center><input type="radio" name="grabing" value="grabingOAD"></center></th>
+                    <th><center><input type="radio" name="grabing" value="grabingSTD"></center></th>
+                    <th><center><input type="radio" name="grabing" value="grabingSTH"></center></th>
+                </tr>
+                
+                <tr>
+                    <th>Pushing</th>
+                    <th><center><input type="radio" name="pushing" value="pushingNever"></center></th>
+                    <th><center><input type="radio" name="pushing" value="pushingLTW"></center></th>
+                    <th><center><input type="radio" name="pushing" value="pushingOAW"></center></th>
+                    <th><center><input type="radio" name="pushing" value="pushingSTW"></center></th>
+                    <th><center><input type="radio" name="pushing" value="pushingOAD"></center></th>
+                    <th><center><input type="radio" name="pushing" value="pushingSTD"></center></th>
+                    <th><center><input type="radio" name="pushing" value="pushingSTH"></center></th>
+                </tr>
+
+                <tr>
+                    <th>Throwing things</th>
+                    <th><center><input type="radio" name="throwing" value="throwingNever"></center></th>
+                    <th><center><input type="radio" name="throwing" value="throwingLTW"></center></th>
+                    <th><center><input type="radio" name="throwing" value="throwingOAW"></center></th>
+                    <th><center><input type="radio" name="throwing" value="throwingSTW"></center></th>
+                    <th><center><input type="radio" name="throwing" value="throwingOAD"></center></th>
+                    <th><center><input type="radio" name="throwing" value="throwingSTD"></center></th>
+                    <th><center><input type="radio" name="throwing" value="throwingSTH"></center></th>
+                </tr>
+
+
+                <tr>
+                    <th>Destroying Property</th>
+                    <th><center><input type="radio" name="destroying" value="destroyingNever"></center></th>
+                    <th><center><input type="radio" name="destroying" value="destroyingLTW"></center></th>
+                    <th><center><input type="radio" name="destroying" value="destroyingOAW"></center></th>
+                    <th><center><input type="radio" name="destroying" value="destroyingSTW"></center></th>
+                    <th><center><input type="radio" name="destroying" value="detroyingOAD"></center></th>
+                    <th><center><input type="radio" name="destroying" value="destroyingSTD"></center></th>
+                    <th><center><input type="radio" name="destroying" value="destroyingSTH"></center></th>
+                </tr>
+
+
+                <tr>
+                    <th>Hurting others</th>
+                    <th><center><input type="radio" name="hurting" value="hurtingNever"></center></th>
+                    <th><center><input type="radio" name="hurting" value="hurtingLTW"></center></th>
+                    <th><center><input type="radio" name="hurting" value="hurtingOAW"></center></th>
+                    <th><center><input type="radio" name="hurting" value="hurtingSTW"></center></th>
+                    <th><center><input type="radio" name="hurting" value="hurtingOAD"></center></th>
+                    <th><center><input type="radio" name="hurting" value="hurtingSTD"></center></th>
+                    <th><center><input type="radio" name="hurting" value="hurtingSTH"></center></th>
+                </tr>
+           
+                <tr>
+                    <th>Aimless wandering</th>
+                    <th><center><input type="radio" name="wandering" value="wanderingNever"></center></th>
+                    <th><center><input type="radio" name="wandering" value="wanderingLTW"></center></th>
+                    <th><center><input type="radio" name="wandering" value="wanderingOAW"></center></th>
+                    <th><center><input type="radio" name="wandering" value="wanderingSTW"></center></th>
+                    <th><center><input type="radio" name="wandering" value="wanderingOAD"></center></th>
+                    <th><center><input type="radio" name="wandering" value="wanderingSTD"></center></th>
+                    <th><center><input type="radio" name="wandering" value="wanderingSTH"></center></th>
+                </tr>
+    
+                <tr>
+                    <th>Being alone</th>
+                    <th><center><input type="radio" name="alone" value="aloneNever"></center></th>
+                    <th><center><input type="radio" name="alone" value="aloneLTW"></center></th>
+                    <th><center><input type="radio" name="alone" value="aloneOAW"></center></th>
+                    <th><center><input type="radio" name="alone" value="aloneSTW"></center></th>
+                    <th><center><input type="radio" name="alone" value="aloneOAD"></center></th>
+                    <th><center><input type="radio" name="alone" value="aloneSTD"></center></th>
+                    <th><center><input type="radio" name="alone" value="aloneSTH"></center></th>
+                </tr>
+            </tbody>
+        </table>
+            
+        <table class="table table-bordered">       
+            <thead>
+                <tr>
+                    <th>Verbal Activities</th>
+                    <th>Never</th>
+                    <th>Less than once a week</th>
+                    <th>Once a week</th>
+                    <th>Several times a week</th>
+                    <th>Once or twice a day</th>
+                    <th>Several times a day</th>
+                    <th>Several times an hour</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <th>Cursing and Verbal agression</th>
+                    <th><center><input type="radio" name="cursing" value="cursingNever"></center></th>
+                    <th><center><input type="radio" name="cursing" value="cursingLTW"></center></th>
+                    <th><center><input type="radio" name="cursing" value="cursingOAW"></center></th>
+                    <th><center><input type="radio" name="cursing" value="cursingSTW"></center></th>
+                    <th><center><input type="radio" name="cursing" value="cursingOAD"></center></th>
+                    <th><center><input type="radio" name="cursing" value="cursingSTD"></center></th>
+                    <th><center><input type="radio" name="cursing" value="cursingSTH"></center></th>
+                </tr>
+                    
+                <tr>
+                    <th>Screaming</th>
+                    <th><center><input type="radio" name="screaming" value="screamingNever"></center></th>
+                    <th><center><input type="radio" name="screaming" value="screamingLTW"></center></th>
+                    <th><center><input type="radio" name="screaming" value="screamingOAW"></center></th>
+                    <th><center><input type="radio" name="screaming" value="screamingSTW"></center></th>
+                    <th><center><input type="radio" name="screaming" value="screamingOAD"></center></th>
+                    <th><center><input type="radio" name="screaming" value="screamingSTD"></center></th>
+                    <th><center><input type="radio" name="screaming" value="screamingSTH"></center></th>
+                </tr>
+    
+                <tr>
+                    <th>Repetitive sentences</th>
+                    <th><center><input type="radio" name="rep" value="repNever"></center></th>
+                    <th><center><input type="radio" name="rep" value="repLTW"></center></th>
+                    <th><center><input type="radio" name="rep" value="repOAW"></center></th>
+                    <th><center><input type="radio" name="rep" value="repSTW"></center></th>
+                    <th><center><input type="radio" name="rep" value="repOAD"></center></th>
+                    <th><center><input type="radio" name="rep" value="repSTD"></center></th>
+                    <th><center><input type="radio" name="rep" value="repSTH"></center></th>
+                </tr>
+                
+                <tr>
+                    <th>Strange Noises</th>
+                    <th><center><input type="radio" name="noise" value="noiseNever"></center></th>
+                    <th><center><input type="radio" name="noise" value="noiseLTW"></center></th>
+                    <th><center><input type="radio" name="noise" value="noiseOAW"></center></th>
+                    <th><center><input type="radio" name="noise" value="noiseSTW"></center></th>
+                    <th><center><input type="radio" name="noise" value="noiseOAD"></center></th>
+                    <th><center><input type="radio" name="noise" value="noiseSTD"></center></th>
+                    <th><center><input type="radio" name="noise" value="noiseSTH"></center></th>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="btnSubmit()">Submit</button>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBDuwnowYFdMMKDCJPrgQnxf15hk8_u8Ms",
+    authDomain: "recorder-c22a7.firebaseapp.com",
+    databaseURL: "https://recorder-c22a7.firebaseio.com",
+    projectId: "recorder-c22a7",
+    storageBucket: "recorder-c22a7.appspot.com",
+    messagingSenderId: "1001553657375",
+    appId: "1:1001553657375:web:fc93c65f479d4a33"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <script>
+        function btnSubmit(){
+            var database = firebase.database().ref();
+            var characteristics = []
+            var Name = document.getElementById("name").value;
+            if(Name == ""){
+                window.alert("Please fill in the patient's name")
+            }else{
+                // window.location.href = "home.html";
+                var hitting = document.getElementsByName("hitting");
+                var hittingVal;
+                for(var i=0;i<hitting.length;i++){
+                    if(hitting[i].checked){
+                        hittingVal = hitting[i].value;
+                        switch(hittingVal){
+                            case 'hittingNever':characteristics.push("'hitting':'never'");
+                                                break;
+                            case 'hittingLTW':characteristics.push("'hitting':'less than once in a week'");
+                                              break;                 
+                            case 'hittingOAW':characteristics.push("'hitting':'once a week'");
+                                              break;  
+                            case 'hittingSTW':characteristics.push("'hitting':'several times a week'");
+                                              break; 
+                            case 'hittingOAD':characteristics.push("'hitting':'once a day'");
+                                              break; 
+                            case 'hittingSTD':characteristics.push("'hitting':'several times a day'");
+                                              break; 
+                            case 'hittingSTH':characteristics.push("'hitting':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var grabing = document.getElementsByName("grabing");
+                var grabingVal;
+                for(var i=0;i<grabing.length;i++){
+                    if(grabing[i].checked){
+                        grabingVal = grabing[i].value;
+                        switch(grabingVal){
+                            case 'grabingNever':characteristics.push("'grabing onto others':'never'");
+                                              break;
+                            case 'grabingLTW':characteristics.push("'grabing onto others':'less than once in a week'");
+                                              break;                 
+                            case 'grabingOAW':characteristics.push("'grabing onto others':'once a week'");
+                                              break;  
+                            case 'grabingSTW':characteristics.push("'grabing onto others':'several times a week'");
+                                              break; 
+                            case 'grabingOAD':characteristics.push("'grabing onto others':'once a day'");
+                                              break; 
+                            case 'grabingSTD':characteristics.push("'grabing onto others':'several times a day'");
+                                              break; 
+                            case 'grabingSTH':characteristics.push("'grabing onto others':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var pushing = document.getElementsByName("pushing");
+                var pushingVal;
+                for(var i=0;i<pushing.length;i++){
+                    if(pushing[i].checked){
+                        pushingVal = pushing[i].value;
+                        switch(pushingVal){
+                            case 'pushingNever':characteristics.push("'pushing':'never'");
+                                              break;
+                            case 'pushingLTW':characteristics.push("'pushing':'less than once in a week'");
+                                              break;                 
+                            case 'pushingOAW':characteristics.push("'pushing':'once a week'");
+                                              break;  
+                            case 'pushingSTW':characteristics.push("'pushing':'several times a week'");
+                                              break; 
+                            case 'pushingOAD':characteristics.push("'pushing':'once a day'");
+                                              break; 
+                            case 'pushingSTD':characteristics.push("'pushing':'several times a day'");
+                                              break; 
+                            case 'pushingSTH':characteristics.push("'pushing':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var throwing = document.getElementsByName("throwing");
+                var throwingVal;
+                for(var i=0;i<throwing.length;i++){
+                    if(throwing[i].checked){
+                        throwingVal = hitting[i].value;
+                        switch(throwingVal){
+                            case 'throwingNever':characteristics.push("'throwing':'never'");
+                                              break;
+                            case 'throwingLTW':characteristics.push("'throwing':'less than once in a week'");
+                                              break;                 
+                            case 'throwingOAW':characteristics.push("'throwing':'once a week'");
+                                              break;  
+                            case 'throwingSTW':characteristics.push("'throwing':'several times a week'");
+                                              break; 
+                            case 'throwingOAD':characteristics.push("'throwing':'once a day'");
+                                              break; 
+                            case 'throwingSTD':characteristics.push("'throwing':'several times a day'");
+                                              break; 
+                            case 'throwingSTH':characteristics.push("'throwing':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var destroying = document.getElementsByName("destroying");
+                var destroyingVal;
+                for(var i=0;i<destroying.length;i++){
+                    if(destroying[i].checked){
+                        destroyingVal = destroying[i].value;
+                        switch(destroyingVal){
+                            case 'destroyingNever':characteristics.push("'destroying':'never'");
+                                              break;
+                            case 'destroyingLTW':characteristics.push("'destroying':'less than once in a week'");
+                                              break;                 
+                            case 'destroyingOAW':characteristics.push("'destroying':'once a week'");
+                                              break;  
+                            case 'destroyingSTW':characteristics.push("'destroying':'several times a week'");
+                                              break; 
+                            case 'destroyingOAD':characteristics.push("'destroying':'once a day'");
+                                              break; 
+                            case 'destroyingSTD':characteristics.push("'destroying':'several times a day'");
+                                              break; 
+                            case 'destroyingSTH':characteristics.push("'destroying':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var hurting = document.getElementsByName("hurting");
+                var hurtingVal;
+                for(var i=0;i<hurting.length;i++){
+                    if(hurting[i].checked){
+                        hurtingVal = hurting[i].value;
+                        switch(hurtingVal){
+                            case 'hurtingNever':characteristics.push("'hurting':'never'");
+                                              break;
+                            case 'hurtingLTW':characteristics.push("'hurting':'less than once in a week'");
+                                              break;                 
+                            case 'hurtingOAW':characteristics.push("'hurting':'once a week'");
+                                              break;  
+                            case 'hurtingSTW':characteristics.push("'hurting':'several times a week'");
+                                              break; 
+                            case 'hurtingOAD':characteristics.push("'hurting':'once a day'");
+                                              break; 
+                            case 'hurtingSTD':characteristics.push("'hurting':'several times a day'");
+                                              break; 
+                            case 'hurtingSTH':characteristics.push("'hurting':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var wandering = document.getElementsByName("wandering");
+                var wanderingVal;
+                for(var i=0;i<wandering.length;i++){
+                    if(wandering[i].checked){
+                        wanderingVal = wandering[i].value;
+                        switch(wanderingVal){
+                            case 'wanderingNever':characteristics.push("'wandering':'never'");
+                                              break;
+                            case 'wanderingLTW':characteristics.push("'wandering':'less than once in a week'");
+                                              break;                 
+                            case 'wanderingOAW':characteristics.push("'wandering':'once a week'");
+                                              break;  
+                            case 'wanderingSTW':characteristics.push("'wandering':'several times a week'");
+                                              break; 
+                            case 'wanderingOAD':characteristics.push("'wandering':'once a day'");
+                                              break; 
+                            case 'wanderingSTD':characteristics.push("'wandering':'several times a day'");
+                                              break; 
+                            case 'wanderingSTH':characteristics.push("'wandering':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var alone = document.getElementsByName("alone");
+                var aloneVal;
+                for(var i=0;i<alone.length;i++){
+                    if(alone[i].checked){
+                        aloneVal = alone[i].value;
+                        switch(aloneVal){
+                            case 'aloneNever':characteristics.push("'being alone':'never'");
+                                              break;
+                            case 'aloneLTW':characteristics.push("'being alone':'less than once in a week'");
+                                              break;                 
+                            case 'aloneOAW':characteristics.push("'being alone':'once a week'");
+                                              break;  
+                            case 'aloneSTW':characteristics.push("'being alone':'several times a week'");
+                                              break; 
+                            case 'aloneOAD':characteristics.push("'being alone':'once a day'");
+                                              break; 
+                            case 'aloneSTD':characteristics.push("'being alone':'several times a day'");
+                                              break; 
+                            case 'aloneSTH':characteristics.push("'being alone':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var cursing = document.getElementsByName("cursing");
+                var cursingVal;
+                for(var i=0;i<cursing.length;i++){
+                    if(cursing[i].checked){
+                        cursingVal = cursing[i].value;
+                        switch(cursingVal){
+                            case 'cursingNever':characteristics.push("'cursing':'never'");
+                                              break;
+                            case 'cursingLTW':characteristics.push("'cursing':'less than once in a week'");
+                                              break;                 
+                            case 'cursingOAW':characteristics.push("'cursing':'once a week'");
+                                              break;  
+                            case 'cursingSTW':characteristics.push("'cursing':'several times a week'");
+                                              break; 
+                            case 'cursingOAD':characteristics.push("'cursing':'once a day'");
+                                              break; 
+                            case 'cursingSTD':characteristics.push("'cursing':'several times a day'");
+                                              break; 
+                            case 'cursingSTH':characteristics.push("'cursing':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var screaming = document.getElementsByName("screaming");
+                var scremingVal;
+                for(var i=0;i<screaming.length;i++){
+                    if(screaming[i].checked){
+                        screamingVal = screaming[i].value;
+                        switch(screamingVal){
+                            case 'screamingNever':characteristics.push("'screaming':'never'");
+                                              break;
+                            case 'screamingLTW':characteristics.push("'screaming':'less than once in a week'");
+                                              break;                 
+                            case 'screamingOAW':characteristics.push("'screaming':'once a week'");
+                                              break;  
+                            case 'screamingSTW':characteristics.push("'screaming':'several times a week'");
+                                              break; 
+                            case 'screamingOAD':characteristics.push("'screaming':'once a day'");
+                                              break; 
+                            case 'screamingSTD':characteristics.push("'screaming':'several times a day'");
+                                              break; 
+                            case 'screamingSTH':characteristics.push("'screaming':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var rep = document.getElementsByName("rep");
+                var repVal;
+                for(var i=0;i<rep.length;i++){
+                    if(rep[i].checked){
+                        repVal = rep[i].value;
+                        switch(repVal){
+                            case 'repNever':characteristics.push("'repetitive sentences':'never'");
+                                              break;
+                            case 'repLTW':characteristics.push("'repetitive sentences':'less than once in a week'");
+                                              break;                 
+                            case 'repOAW':characteristics.push("'repetitive sentences':'once a week'");
+                                              break;  
+                            case 'repSTW':characteristics.push("'repetitive sentences':'several times a week'");
+                                              break; 
+                            case 'repOAD':characteristics.push("'repetitive sentences':'once a day'");
+                                              break; 
+                            case 'repSTD':characteristics.push("'repetitive sentences':'several times a day'");
+                                              break; 
+                            case 'repSTH':characteristics.push("'repetitive sentences':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                var noise = document.getElementsByName("noise");
+                var noiseVal;
+                for(var i=0;i<noise.length;i++){
+                    if(noise[i].checked){
+                        noiseVal = noise[i].value;
+                        switch(noiseVal){
+                            case 'noiseNever':characteristics.push("'strange noise':'never'");
+                                              break;
+                            case 'noiseLTW':characteristics.push("'strange noise':'less than once in a week'");
+                                              break;                 
+                            case 'noiseOAW':characteristics.push("'strange noise':'once a week'");
+                                              break;  
+                            case 'noiseSTW':characteristics.push("'strange noise':'several times a week'");
+                                              break; 
+                            case 'noiseOAD':characteristics.push("'strange noise':'once a day'");
+                                              break; 
+                            case 'noiseSTD':characteristics.push("'strange noise':'several times a day'");
+                                              break; 
+                            case 'noiseSTH':characteristics.push("'strange noise':'several times an hour'");
+                                              break;               
+                        }
+                    }
+                }
+
+                database.child('user1').child('CMAI').set({'characteristics':characteristics}).then(function(){
+                        window.location.href = "home.html";
+                })
+            }
+        }
+    </script>
+</body>

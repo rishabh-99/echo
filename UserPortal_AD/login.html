@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Sign In</title>
+ </head>
+
+<style>
+    .registerForm{
+        padding-top: 200px;
+    }
+    .header{
+        color:#3498DB;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+<div class="container">
+    <div class="registerForm">
+    <div class="card">
+        <div class="card-body">
+            <b><center><label class='header'>Login Here</label></center></b>
+            <div class="form-group">
+                <label>Email id:</label>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" id="pass">
+            </div>
+            <button class="btn btn-primary" id="login" onclick="loginBtn()">Sign In</button><br>
+            <small>Don't have an account?<a href="register.html">SignUp</a></small>
+        </div> 
+    </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBDuwnowYFdMMKDCJPrgQnxf15hk8_u8Ms",
+    authDomain: "recorder-c22a7.firebaseapp.com",
+    databaseURL: "https://recorder-c22a7.firebaseio.com",
+    projectId: "recorder-c22a7",
+    storageBucket: "recorder-c22a7.appspot.com",
+    messagingSenderId: "1001553657375",
+    appId: "1:1001553657375:web:fc93c65f479d4a33"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+function loginBtn(){
+    var emailId = document.getElementById("email").value; 
+    var password = document.getElementById("pass").value;
+
+    if(emailId == ""){
+        window.alert("Please fill in your Email-id");
+        return false; 
+    }
+    else if(password == ""){
+        window.alert("Please fill in your password");
+        return false;
+    }
+    else{
+        firebase.auth().signInWithEmailAndPassword(emailId, password).then(function(){
+            window.location.href = "home.html";
+        }).catch(function(error) {
+            window.alert("Some problem with sign in... Please check if you are registered")
+        });
+    }
+}
+</script>
+</body>
+</html>

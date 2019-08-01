@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Register Portal</title>
+ </head>
+
+<style>
+    .registerForm{
+        padding-top: 100px;
+    }
+    .header{
+        color:#3498DB;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+<div class="container">
+    <div class="registerForm">
+    <div class="card">
+        <div class="card-body">
+            <b><center><label class='header'>Register Here</label></center></b>
+            <div class="form-group">
+                <label>User Name:</label>
+                <input type="text" class="form-control" id="uname">
+            </div>
+            <div class="form-group">
+                <label>Contact Number:</label>
+                <input type="text" class="form-control" id="cnctnum">
+            </div>
+            <div class="form-group">
+                <label>Email id:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" id="pass">
+            </div>
+            <div class="form-group">
+                <label>Repeat Password:</label>
+                <input type="password" class="form-control" id="repPass">
+            </div>
+            <button class="btn btn-primary" id="submit" onclick="registerBtn()">Register</button><br>
+            <small>Already have an account?<a href="login.html">SignIn</a></small>
+        </div> 
+    </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBDuwnowYFdMMKDCJPrgQnxf15hk8_u8Ms",
+    authDomain: "recorder-c22a7.firebaseapp.com",
+    databaseURL: "https://recorder-c22a7.firebaseio.com",
+    projectId: "recorder-c22a7",
+    storageBucket: "recorder-c22a7.appspot.com",
+    messagingSenderId: "1001553657375",
+    appId: "1:1001553657375:web:fc93c65f479d4a33"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+function registerBtn(){
+    
+    var userName = document.getElementById("uname").value; 
+    var contactno = document.getElementById("cnctnum").value;
+    var emailId = document.getElementById("email").value;
+    var password = document.getElementById("pass").value;
+    var repPassword = document.getElementById("repPass").value; 
+
+    if(userName == ""){
+        window.alert("Please fill in your Firstname"); 
+        return false;
+    }
+    else if(contactno == ""){
+        window.alert("Please fill in your Contact number");
+        return false; 
+    }
+    else if(emailId == ""){
+        window.alert("Please fill in your Email-id");
+        return false; 
+    }
+    else if(password == ""){
+        window.alert("Please enter ypur password");
+        return false; 
+    }
+    else if(repPassword == ""){
+        window.alert("Please fill in the password again");
+        return false; 
+    }
+    else if(isNaN(contactno)){
+        window.alert("Please fill in a valid phone number"); 
+        return false;
+    }
+    else if (contactno.length < 10){
+        window.alert("Please enter a 10 digit phone number");
+        return false; 
+    }
+    else if(password != repPassword){
+        window.alert("Password seems to be incorrect");
+        return false; 
+    }
+    else{
+        firebase.auth().createUserWithEmailAndPassword(emailId, password).then(function(){
+            var userId = firebase.auth().currentUser.uid;
+            var database = firebase.database();
+            database.ref().child('CareTaker').child(userId).set({'name':userName}).then(function(){
+                window.location.href = "home.html";
+            })
+        }).catch(function(error) {
+            window.alert("There was a problem in Sign Up");
+        });
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Welcome</title>
+
+    <style>
+        .card{
+            height: 500px;
+            width: 500px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+                <button class="btn btn-light" onclick="addUser()">AddUser</button>
+                <button class="btn btn-light" onclick="btnLogout()">SignOut</button>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="card">
+        <div class="card-header">User1</div>
+        <div class="card-body">
+            <button class="btn btn-primary" onclick="viewData()">View details</button><br><br>
+            <button class="btn btn-primary" onclick="liveStream()">View live streaming data</button>
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBDuwnowYFdMMKDCJPrgQnxf15hk8_u8Ms",
+    authDomain: "recorder-c22a7.firebaseapp.com",
+    databaseURL: "https://recorder-c22a7.firebaseio.com",
+    projectId: "recorder-c22a7",
+    storageBucket: "recorder-c22a7.appspot.com",
+    messagingSenderId: "1001553657375",
+    appId: "1:1001553657375:web:fc93c65f479d4a33"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+
+function addUser(){
+    window.location.href = "CMAIform.html";
+}
+
+function viewData(){
+    window.location.href = "file:///Users/thrupthin/Desktop/MyFirstAPI/graphPlot.html"
+}
+
+function liveStream(){
+    window.location.href = "file:///Users/thrupthin/Desktop/UserPortal_AD/graph.html"
+}
+
+function btnLogout(){
+        firebase.auth().signOut().then(function() {
+            window.location.href="login.html";
+        }).catch(function(error) {
+            window.alert("Couldn't Sign out:(");
+        });
+    }
+</script>
+</body>

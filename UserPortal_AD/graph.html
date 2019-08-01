@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>User Portal</title>
+</head>
+<body>
+  <div id='graph0'></div>
+  <div id='graph1'></div>
+  <div id='graph2'></div>
+  <div id='graph3'></div>
+  <div id='graph4'></div>
+  <div id='graph5'></div>
+  <div id='graph6'></div>
+  
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBDuwnowYFdMMKDCJPrgQnxf15hk8_u8Ms",
+    authDomain: "recorder-c22a7.firebaseapp.com",
+    databaseURL: "https://recorder-c22a7.firebaseio.com",
+    projectId: "recorder-c22a7",
+    storageBucket: "recorder-c22a7.appspot.com",
+    messagingSenderId: "1001553657375",
+    appId: "1:1001553657375:web:fc93c65f479d4a33"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+    var values;
+    var ax = [];
+    var ay = [];
+    var az = [];
+    var gx = [];
+    var gy = [];
+    var gz = [];
+    var hr = [];
+    var ts = [];
+    var accel = [];
+    var gyro = [];
+
+    var database = firebase.database();
+    var firebaseRef = database.ref('user1/')
+    firebaseRef.on('child_added',function(snapshot){
+      var val=JSON.stringify(snapshot.val());
+      var obj =JSON.parse(val);
+      // console.log(snapshot.val());
+      ax.push(obj['ax'])
+      ay.push(obj['ay'])
+      az.push(obj['az'])
+      gx.push(obj['gx'])
+      gy.push(obj['gy'])
+      gz.push(obj['gz'])
+      hr.push(obj['heartRate'])
+      ts.push(obj['timestamp'])
+    });
+   
+    Plotly.plot('graph0',[{
+        x: ts,
+        y: ax,
+        name:'accelerometer-x',
+        mode: 'lines',
+        domain: [0,0.4],
+        line: {color: 'black'}
+    }]);
+
+    Plotly.plot('graph1',[{
+        x: ts,
+        y: ay,
+        mode: 'lines',
+        domain: [0.6,1],
+        line: {color: 'black'}
+    }]);
+
+    Plotly.plot('graph2',[{
+        x: ts,
+        y: az,
+        mode: 'lines',
+        domain: [0.6,1],
+        line: {color: 'black'}
+    }]);
+
+    Plotly.plot('graph3',[{
+        x: ts,
+        y: gx,
+        mode: 'lines',
+        domain: [0.6,1],
+        line: {color: 'blue'}
+    }]);
+
+    Plotly.plot('graph4',[{
+        x: ts,
+        y: gy,
+        mode: 'lines',
+        domain: [0.6,1],
+        line: {color: 'blue'}
+    }]);
+
+    Plotly.plot('graph5',[{
+        x: ts,
+        y: gz,
+        mode: 'lines',
+        domain: [0.6,1],
+        line: {color: 'blue'}
+    }]);
+
+    Plotly.plot('graph6',[{
+        x: ts,
+        y: hr,
+        mode: 'lines',
+        domain: [0.6,1],
+        line: {color: 'red'}
+    }]);
+
+    var cnt = 0;
+
+    var interval = setInterval(function(){
+      Plotly.update('graph0',{
+        x:[ts],
+        y:[ax]
+    });
+
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+    var interval = setInterval(function(){
+      Plotly.update('graph1',{
+        x:[ts],
+        y:[ay]
+    });
+    
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+    var interval = setInterval(function(){
+      Plotly.update('graph2',{
+        x:[ts],
+        y:[az]
+    });
+    
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+    var interval = setInterval(function(){
+      Plotly.update('graph3',{
+        x:[ts],
+        y:[gx]
+    });
+    
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+    var interval = setInterval(function(){
+      Plotly.update('graph4',{
+        x:[ts],
+        y:[gy]
+    });
+    
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+    var interval = setInterval(function(){
+      Plotly.update('graph5',{
+        x:[ts],
+        y:[gz]
+    });
+    
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+    var interval = setInterval(function(){
+      Plotly.update('graph6',{
+        x:[ts],
+        y:[hr]
+    });
+    
+    if(cnt === 100)
+      clearInterval(interval);
+    },1000);
+
+ 
+
+</script>
+</body>
